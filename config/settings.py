@@ -16,10 +16,10 @@ class Settings(BaseSettings):
     LIVEKIT_URL: str
     JINA_API_KEY: Optional[str] = None
     EXA_API_KEY: Optional[str] = None
-    SERIAL_PORT: Optional[str] = None  # e.g. /dev/ttyUSB0, COM6
+    SERIAL_PORT: Optional[str] = "/dev/ttyUSB0"  # e.g. /dev/ttyUSB0, COM6
     SERIAL_BAUD: int = 9600
-    MOTOR_WAVE_CMD: str = "WAVE"       # Number sent to Arduino for wave motion
-    MOTOR_GESTURE_CMD: str = "RANDOM"    # Number sent to Arduino for body language gesture
+    MOTOR_WAVE_CMD: str = "WAVE\r\n"       # Number sent to Arduino for wave motion
+    MOTOR_GESTURE_CMD: str = "RANDOM\r\n"    # Number sent to Arduino for body language gesture
     
     class Config:
         env_file = ".env"

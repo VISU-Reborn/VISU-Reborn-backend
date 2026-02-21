@@ -7,14 +7,31 @@
   --eyelid-color: whitesmoke;
 }
 
-body {
+html, body {
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
   background-color: white;
-  margin: 0px;
+  cursor: none;           /* hide cursor for kiosk */
+  touch-action: none;     /* prevent touch drag/scroll */
+  -webkit-overflow-scrolling: none;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+/* Hide scrollbars in all browsers */
+html::-webkit-scrollbar,
+body::-webkit-scrollbar {
+  display: none;
 }
 
 .buttons {
-  position: relative;
+  position: absolute;
   z-index: 3;
+  opacity: 0;             /* hidden by default for immersion */
+  pointer-events: none;   /* can't accidentally tap them */
 }
 
 .face {
